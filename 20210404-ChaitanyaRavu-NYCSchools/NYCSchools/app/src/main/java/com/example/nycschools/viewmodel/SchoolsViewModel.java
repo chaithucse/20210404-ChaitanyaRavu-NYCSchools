@@ -17,10 +17,19 @@ public class SchoolsViewModel extends ViewModel {
         repository = new DataRepository();
     }
 
+    /**
+     * Get School List from repository
+     * @return
+     */
     public LiveData<List<SchoolListResponse>> getSchoolsList() {
         return repository.getSchools();
     }
 
+    /**
+     * Get School details based on school dbn ID
+     * @param schoolName
+     * @return
+     */
     public LiveData<List<SchoolDetailResponse>> getSchoolDetails(String schoolName) {
         return repository.getSchoolDetails(schoolName);
     }

@@ -14,6 +14,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * Repository layer for School data
+ */
 public class DataRepository {
     private final ApiService apiService;
 
@@ -21,6 +24,11 @@ public class DataRepository {
         apiService = ApiClient.getClient().create(ApiService.class);
     }
 
+    /**
+     * Get the number of schools list from REST API
+     *
+     * @return
+     */
     public LiveData<List<SchoolListResponse>> getSchools() {
         final MutableLiveData<List<SchoolListResponse>> schoolList = new MutableLiveData<>();
 
@@ -40,6 +48,12 @@ public class DataRepository {
         return schoolList;
     }
 
+    /**
+     * Get the School details from REST API
+     *
+     * @param schoolName
+     * @return
+     */
     public LiveData<List<SchoolDetailResponse>> getSchoolDetails(String schoolName) {
         final MutableLiveData<List<SchoolDetailResponse>> schoolDetails = new MutableLiveData<>();
 
