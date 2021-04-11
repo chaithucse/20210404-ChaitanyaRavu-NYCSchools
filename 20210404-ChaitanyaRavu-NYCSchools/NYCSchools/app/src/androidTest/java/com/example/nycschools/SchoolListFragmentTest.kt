@@ -39,7 +39,7 @@ class SchoolListFragmentTest {
 
         // Verify that performing a click changes the NavController’s state
         onView(ViewMatchers.withId(R.id.school_title)).perform(ViewActions.click())
-        verify(navController).navigate(R.id.schoolListFragment)
+        verify(navController).navigate(R.id.schoolDetailFragment)
 
         //Check SAT scores views are displayed in School detailed fragment
         onView(withId(R.id.sat_total)).check((matches(isDisplayed())))
